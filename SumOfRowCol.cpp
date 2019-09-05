@@ -3,7 +3,6 @@ using namespace std;
 int main(){
   int m,n,first[10][10],sum=0;
   cin>>m>>n;
-  bool flag=true;
   for(int i=0;i<m;i++){
       for(int j=0;j<n;j++){
           cin>>first[i][j];
@@ -11,12 +10,18 @@ int main(){
     }
     for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
-            if(i+j==2){
              sum+=first[i][j];
-            }
         }
+        cout<<sum;
+        sum=0;
     }
-    cout<<sum;
-  
+    sum=0;
+    for(int j=0;j<n;j++){
+        for(int i=0;i<m;i++){
+            sum+=first[i][j];
+        }
+        cout<<sum;
+        sum=0;
+    } 
     return 0;  
 }    
